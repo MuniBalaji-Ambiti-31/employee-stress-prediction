@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="./lib/anime.js"></script>
+    <script>
+function get_value(str){
+    //console.log(input_obj) //debugging 
+    return document.getElementById(str).value
+}
+
+function isMatched(){
+    let s1=document.getElementById('rpasswd').value
+    let s2=document.getElementById('crpasswd').value
+    if(s1 !== s2) {
+        document.getElementById('mpswd').innerText='Passwords does not match'
+        let btn = document.getElementById('sup-btn')
+        btn.disabled=true
+        btn.style.backgroundColor='red'
+        
+    }
+    else {
+        document.getElementById('mpswd').innerText=''
+        let btn = document.getElementById('sup-btn')
+        btn.disabled=false
+        btn.style.backgroundColor='#265df2'
+    }
+}
+    </script>
+</head>
+<body>
+    <div class="sub-header">
+            <h1>Predicting Employee Under Stress Using Machine Learning </h1>
+    </div>
+    <div class="container" id="fla1">
+        <div class="forms">
+            <div class="form login" >
+                <span class="title">Login</span><div class="aL"></div>
+                   <form id="login_form">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter Username" name="username" id="lusrname" oninput="input_obj['username']=get_value('lusrname');" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" name="password" id="lpasswd" oninput="input_obj['password']=get_value('lpasswd')" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <span id="server-responseL" style="font-style:italic;"></span>
+                    <div class="input-field button">
+                        <input type="submit" value="Login" id="sin-btn">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Registration</span>
+                <div class="aR"></div>
+                <form id="signup_form">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter Your Name" id="rusrname" oninput="input_obj['username']=get_value('rusrname')" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" placeholder="Enter Your Email" id="email"  oninput="input_obj['email']=get_value('email')"  required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+
+                    <div class="input-field">
+                        <h1>Select Your Gender</h1>
+                        <div class="custom_select">
+                          <select id="gselect" oninput="input_obj['gender']=get_value('gselect')">
+                            <option for="#gselect" value="">Select</option>
+                            <option for="#gselect" value="male">Male</option>
+                            <option for="#gselect" value="female">Female</option>
+                          </select>
+                        </div>
+                     </div> 
+                    
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Create a password" id="rpasswd" oninput="input_obj['password']=get_value('rpasswd')" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm a password" id="crpasswd" onpointerout="isMatched()" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <span id="mpswd"></span>
+                    <span id="server-responseR" style="font-style:italic;"></span>
+
+                    <div class="input-field button">
+                        <input type="submit" id="sup-btn" value="Signup">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+<script>
+    window.addEventListener('load',()=>{
+        anime({
+            direction:'alternate',
+            easing:'linear',
+            loop:true,
+            targets : '.aL',
+            translateX:55,
+        })
+        anime({
+            direction:'alternate',
+            easing:'linear',
+            loop:true,
+            targets : '.aR',
+           translateX:150,
+        })
+    })
+</script>
+</html>

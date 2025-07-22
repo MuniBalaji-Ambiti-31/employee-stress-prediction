@@ -1,0 +1,144 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+     <title>Prediction Page</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+      <script src="anime.js"></script>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <h1>Employee Stress Prediction Page</h1>
+        </nav>
+        
+       
+        </section>
+        <section class="descript">
+            <div class="description">
+             
+              
+            </div>
+          </section> 
+          <form id="input_data_form">
+              <div class="intro">
+              <h1>To predict the burn rate for one specific employee  <!--and exploreburnout mitigation strategies--> please use the input section below.</h1>
+            </div>
+          
+          <div class="gender">
+            <h3 class="text1">Gender</h3>
+              <div class="options">
+                  <div class="male">
+                      <input type="radio" name="gender" id="M" value="Male" oninput="update_input_object(...get('M'))" required>
+                      <label for="gender">Male</label>
+                  </div>
+                  <div class="female">
+                      <input type="radio" name="gender" id="F" value="Female" oninput="update_input_object(...get('F'))" required>
+                      <label for="gender" >Female</label>
+                    </div>
+              </div>
+          </div>
+
+
+          <div class="gender">
+            <h3 class="text1">Marital Status</h3>
+              <div class="options11">
+                  <div class="male11">
+                      <input type="radio" name="ms_s" id="M" required>
+                      <label for="ms_s">Married</label>
+                  </div>
+                  <div class="female11">
+                      <input type="radio" name="ms_s" id="F"  required>
+                      <label for="ms_s">Not Married</label>
+                    </div>
+              </div>
+          </div>
+          
+          <div class="gender">
+            <h3 class="text1">Company Type</h3>
+              <div class="options1">      
+                  <div class="male1">
+                  <input type="radio" name="cmptype" id="srvc" value="Service" oninput="update_input_object(...get('srvc'))" required>
+                  <label for="ctype" >Service</label>
+                    </div>
+                  <div class="female">
+                  <input type="radio" name="cmptype" id="pdt" value="Product" oninput="update_input_object(...get('pdt'))" required>
+                  <label for="ctype" >Product</label>
+                </div>
+              </div>    
+          </div>   
+          <div class="gender">
+            <h3 class="text1">WFH Available?</h3>
+              <div class="options2">
+                  <div class="male2">
+                  <input type="radio" name="wfh" id="wfhy" value="Yes"oninput="update_input_object(...get('wfhy'))" required>
+                  <label for="wfh" >Yes</label>
+                </div>
+                <div class="female">
+                  <input type="radio" name="wfh" id="wfhn" value="No" oninput="update_input_object(...get('wfhn'))" required>
+                  <label for="wfh" >No</label>
+                </div>
+              </div>
+            </div>
+                  
+            <div class="gender">      
+                  <h3 class="text1">Designation</h3>
+                  <div class="options3">
+                  <input id="dsgn" class="slider"  name="dsgn" type="range" min="1" max="5" oninput="update_input_object(...get('dsgn'));update_slider('dsgn')" value="0" required><output id="dsgn_display" class="range-output" name="dsgn" for="dsgn">0</output>
+                </div>
+              </div>
+
+              <div class="gender">      
+                <h3 class="text1">No of Working hours</h3>
+                <div class="options6">
+                <input id="nowh" class="slider"  name="nowh" type="range" min="1" max="12" oninput="update_slider('nowh')" value="0" required><output id="nowh_display" class="range-output" name="nowh" for="nowh">0</output>
+              </div>
+            </div>
+              
+                 
+               <div class="gender">  
+                  <h3 class="text1">Resources Allocated</h3>
+                  <div class="options4">
+                  <input id="ral" class="range" name="ral" type="range" min="1" max="10" oninput="ral_display.value=ral.value;update_input_object(...get('ral'));update_slider('ral')" value="0" required><output id="ral_display"  class="range-output"name="ral" for="ral">0</output>
+                </div></div>
+                  
+                  
+                  <div class="gender">
+          
+                  <h3 class="text1">Fatigue Score</h3>
+                    <div class="options5">
+                <input id="fsc" class="range" name="fsc" type="range" min="1.0" max="10.0" oninput="fsc_display.value=fsc.value;update_input_object(...get('fsc'));update_slider('fsc')" value="0" required>
+                <output id="fsc_display" class="range-output" name="fsc" for="fsc">0</output>
+                </div></div>
+                  
+                  <div class="submit-container">
+                    <div class="submit">
+                      <button for="input_form" id="s-btn" type="submit">submit</button>
+                    </div>
+                    <span id="sres"></span>
+                  </div>
+                  
+              </form>
+              <br>
+                <button id="run-btn">Run</button>
+                <span id="no-run"></span>
+                <span id="run-text">Running</span><div id="rdot"></div>
+          <div id="result" ></div>
+              
+        </div>
+          <div class="button1"> 
+                  <a href="../home_page/index.html" class="btn" >GO BACK</a>
+              </div>
+              </section>
+    </body>
+    <script src="index.js"></script>
+    <script>
+
+    </script>
+</html>
+

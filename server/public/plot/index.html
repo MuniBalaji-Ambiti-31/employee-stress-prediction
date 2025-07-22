@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <title>Predicting Employee Stress</title>
+    <link rel="shortcut icon" type="image/x-icon" href="download.jpg">
+     
+        <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="plotly.min.js"></script>
+
+</head>
+<body>
+    <section class="sub-header">
+      
+        <h1>Data Exploration</h1>
+       
+        </section>
+    <i class="fa fa-xingx" aria-hidden="true"></i>
+    <div id="description">
+   
+    <h3>This page helps you understand the distribution of your study data. You can explore the training data for our evaluation methods.</h3>
+    <select id="gselect">
+        <option for="#gselect" value="">Select</option>
+        <option for="#gselect" value="AvgDailyHours" id="adh">Average Daily Hours</option>
+        <option for="#gselect" value="Age" id="wfh">Age</option>
+        <option for="#gselect" value="Burn Rate" id="brn">Stress Levels</option>
+        <option for="#gselect" value="MonthlyIncome" mi>Monthly Income</option>
+     
+      </select>
+      <button id="getData">Plot The Graph</button>
+
+    </div>
+    <div><div id="bar"></div><div id="pie"></div></div>
+    <div id="plot"></div>
+
+    <div class="button">
+        <a href="../home_page/index.html" class="btn">GO BACK</a>
+    </div>
+</body>
+<script src="script1.js"></script>
+</html>
